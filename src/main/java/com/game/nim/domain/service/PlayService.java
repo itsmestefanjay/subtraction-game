@@ -70,9 +70,9 @@ public class PlayService implements Move {
     private long calculateSmartMove() {
         long sticksLeft = stake.get();
         // strategy by Bouton
-        long computedAmount = sticksLeft % (MAX_DRAW + 1);
+        long computedAmount = (sticksLeft - 1) % (MAX_DRAW + 1);
         if (computedAmount == 0) {
-            computedAmount = MAX_DRAW;
+            computedAmount = new Random().nextInt(3) + 1;
         }
         return computedAmount;
     }
