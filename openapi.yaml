@@ -73,7 +73,7 @@ components:
     Restart:
       type: object
       properties:
-        sticks:
+        initialSticks:
           type: number
           format: int64
           minimum: 1
