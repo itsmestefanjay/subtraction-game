@@ -10,6 +10,8 @@ import java.util.Random;
 
 public class PlayService implements Move {
 
+    private final int MAX_DRAW = 3;
+
     private final static Logger logger = LoggerFactory.getLogger(PlayService.class);
     private final Stake stake;
     private final boolean expertMode;
@@ -60,22 +62,19 @@ public class PlayService implements Move {
 
     private long calculateRandomMove() {
         // offset by 1 so we don't take 0 sticks
-        int randomTake = new Random().nextInt(3) + 1;
+        int randomTake = new Random().nextInt(MAX_DRAW) + 1;
         // make sure that we take only as many sticks that are available
         return Math.min(stake.get(), randomTake);
     }
 
     private long calculateSmartMove() {
         long sticksLeft = stake.get();
-        // try that a multiple of 4 sticks is left
-        long sticksToTake = sticksLeft % 4;
-        // take at least one stick
-        sticksToTake = Math.max(1, sticksToTake);
-        // never take the last stick, only if necessary
-        if (sticksToTake > 1 && sticksLeft == sticksToTake) {
-            sticksToTake--;
+        // strategy by Bouton
+        long computedAmount = sticksLeft % (MAX_DRAW + 1);
+        if (computedAmount == 0) {
+            computedAmount = MAX_DRAW;
         }
-        return sticksToTake;
+        return computedAmount;
     }
 
     private void logUserProgress(long sticksToTake) {
