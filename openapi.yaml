@@ -7,7 +7,7 @@ externalDocs:
   description: Find out more about the Nim game
   url: https://en.wikipedia.org/wiki/Nim
 servers:
-  - url: https://localhost:8089/nim-game/api/v1
+  - url: https://localhost:8089/subtraction-game/api/v1
 paths:
   /draw:
     put:

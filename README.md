@@ -15,10 +15,10 @@ The player who draws the last stick loses.
 
 ### How to play
 - start the application by either
-  - run `java -jar build/libs/nim-game-1.0.0.jar` or
+  - run `java -jar build/libs/subtraction-game-1.0.0.jar` or
   - use `./gradlew bootRun` or
   - use via the IDEA in the class `NimGameApplication.class`
-- Open a REST client and set the host to `localhost:8089/nim-game/api/v1`
+- Open a REST client and set the host to `localhost:8089/subtraction-game/api/v1`
 - To make a move send a PUT to the endpoint `/draw` with the JSON payload to draw 2 sticks:
 ```json
 {
@@ -51,7 +51,7 @@ The player who draws the last stick loses.
   - enabling expert mode by setting `expert.mode=true` in the application.properties or `-Dexpert.mode=true`
   - setting the initial amount of sticks by setting `stick.amount=<random number>` in the application.properties 
   or `-Dstick.amount=<random number>`
-  - example: `java -Dexpert.mode=true -Dstick.amount=100 -jar build/libs/nim-game-1.0.0.jar`
+  - example: `java -Dexpert.mode=true -Dstick.amount=100 -jar build/libs/subtraction-game-1.0.0.jar`
   - Make sure to add them BEFORE the -jar option
 
 ## modes

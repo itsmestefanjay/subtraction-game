@@ -21,7 +21,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(path = "nim-game/api/v1")
+@RequestMapping(path = "subtraction-game/api/v1")
 public class GameController {
 
     private final Logger logger = LoggerFactory.getLogger(GameController.class);

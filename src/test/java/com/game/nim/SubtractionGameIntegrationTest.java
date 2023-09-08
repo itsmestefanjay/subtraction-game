@@ -18,7 +18,7 @@ public class SubtractionGameIntegrationTest {
     @LocalServerPort
     private int port;
 
-    private static final String API_ROOT = "nim-game/api/v1";
+    private static final String API_ROOT = "subtraction-game/api/v1";
 
     OkHttpClient client = new OkHttpClient();
 
