@@ -20,7 +20,7 @@ public class SubtractionGameIntegrationTest {
 
     private static final String API_ROOT = "subtraction-game/api/v1";
 
-    OkHttpClient client = new OkHttpClient();
+    private final OkHttpClient client = new OkHttpClient();
 
     @Test
     void test_happy_path() throws IOException {

@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class GameConfiguration {
 
-    private static Logger logger = LoggerFactory.getLogger(GameConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(GameConfiguration.class);
 
     @Value("${expert.mode:false}")
     private boolean expertMode;

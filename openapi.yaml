@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Nim Game
-  description: A simple API to play the NIM game (Misére Variant) with a single row.
+  description: |- 
+    A simple API to play the subtraction game with a single row, where each player can draw 1-3 sticks 
+    at a time.
   version: 1.0.0
 externalDocs:
   description: Find out more about the Nim game
@@ -37,7 +39,7 @@ paths:
   /restart:
     put:
       summary: Restart the game
-      description: Restart the game with a defned amount of sticks
+      description: Restart the game with a defined amount of sticks
       operationId: resetGame
       requestBody:
         description: Restart the game by setting a new amount of sticks

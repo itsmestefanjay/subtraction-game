@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class StakeRepository implements Stake {
 
-    private static Logger logger = LoggerFactory.getLogger(StakeRepository.class);
+    private static final Logger logger = LoggerFactory.getLogger(StakeRepository.class);
 
     public static final int DEFAULT_AMOUNT = 13;
     private final AtomicLong sticksLeft;

@@ -17,7 +17,7 @@ public interface Stake {
     /**
      * subtract the amount of sticks from the stake and return the remainder
      * @param amount number of sticks to remove from stake
-     * @return the remaining count of sticvks on the stake
+     * @return the remaining count of sticks on the stake
      */
     long reduce(long amount);
 
