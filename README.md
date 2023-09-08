@@ -46,7 +46,7 @@ The player who draws the last stick loses.
 }
 ```
 
-## Parameters
+### Parameters
 - you can configure the game two ways:
   - enabling expert mode by setting `expert.mode=true` in the application.properties or `-Dexpert.mode=true`
   - setting the initial amount of sticks by setting `stick.amount=<random number>` in the application.properties 
@@ -54,7 +54,7 @@ The player who draws the last stick loses.
   - example: `java -Dexpert.mode=true -Dstick.amount=100 -jar build/libs/subtraction-game-1.0.0.jar`
   - Make sure to add them BEFORE the -jar option
 
-## modes
+### About game modes
 - The _standard mode_ mplements a random amount of sticks to be drawn by the computer
 - The _expert mode_ is just a simple implementation of Bouton's strategy where the winning strategy is to remove
 sticks = `stake % (maxDraw + 1)` or sticks = `maxDraw` if the result would be 0.
