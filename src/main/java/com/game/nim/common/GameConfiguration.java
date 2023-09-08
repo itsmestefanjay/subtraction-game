@@ -1,7 +1,7 @@
 package com.game.nim.common;
 
-import com.game.nim.domain.service.StakeRepository;
 import com.game.nim.domain.service.PlayService;
+import com.game.nim.domain.service.StakeRepository;
 import com.game.nim.usecase.in.Move;
 import com.game.nim.usecase.in.Stake;
 import org.slf4j.Logger;

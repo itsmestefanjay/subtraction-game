@@ -1,7 +1,7 @@
 package com.game.nim;
 
-import com.game.nim.adapter.in.web.model.GameResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.game.nim.adapter.in.web.model.GameResponse;
 import okhttp3.*;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;

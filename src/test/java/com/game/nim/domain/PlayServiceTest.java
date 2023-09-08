@@ -1,8 +1,8 @@
 package com.game.nim.domain;
 
 import com.game.nim.domain.model.GameStatus;
-import com.game.nim.domain.service.StakeRepository;
 import com.game.nim.domain.service.PlayService;
+import com.game.nim.domain.service.StakeRepository;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
