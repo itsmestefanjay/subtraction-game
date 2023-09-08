@@ -9,13 +9,13 @@ public interface Stake {
     long get();
 
     /**
-     * overwrite the current amount of sticks on the stake
+     * overwrite the current amount of sticks on the stake, but never negative
      * @param sticks the amount of sticks to set
      */
     void set(long sticks);
 
     /**
-     * subtract the amount of sticks from the stake and return the remainder
+     * subtract the amount of sticks from the stake and return the remainder or 0 if negative
      * @param amount number of sticks to remove from stake
      * @return the remaining count of sticks on the stake
      */

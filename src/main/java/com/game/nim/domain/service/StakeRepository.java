@@ -28,7 +28,7 @@ public class StakeRepository implements Stake {
      */
     @Override
     public void set(long sticks) {
-        sticksLeft.set(sticks);
+        sticksLeft.set(Math.max(0, sticks));
     }
 
     /**
@@ -44,7 +44,8 @@ public class StakeRepository implements Stake {
      */
     @Override
     public long reduce(long amount) {
-        sticksLeft.set(sticksLeft.get() - amount);
+        long currentAmount = sticksLeft.get();
+        sticksLeft.set(Math.max(0, currentAmount - amount));
         return sticksLeft.get();
     }
 }
