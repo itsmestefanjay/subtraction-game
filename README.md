@@ -42,7 +42,7 @@ The player who draws the last stick loses.
 - you can restart the game by a PUT of the new amount of sticks (>1) to the endpoint `/restart`:
 ```json
 {
-  "initialSticks": 13
+  "initialSticks": 15
 }
 ```
 
