@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: Nim Game
+  description: A simple API to play the NIM game (Misére Variant) with a single row.
+  version: 1.0.0
+externalDocs:
+  description: Find out more about the Nim game
+  url: https://en.wikipedia.org/wiki/Nim
+servers:
+  - url: https://localhost:8089/nim-game/api/v1
+paths:
+  /draw:
+    put:
+      summary: Take sticks
+      description: Take a defined amount of sticks from the stack
+      operationId: takeSticks
+      requestBody:
+        description: Remove a defined amount of sticks from the current stack count
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Take'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Invalid arguments supplied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /restart:
+    put:
+      summary: Restart the game
+      description: Restart the game with a defned amount of sticks
+      operationId: resetGame
+      requestBody:
+        description: Restart the game by setting a new amount of sticks
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restart'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Invalid arguments supplied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    Take:
+      type: object
+      properties:
+        sticks:
+          type: number
+          format: int64
+          minimum: 1
+          maximum: 3
+          example: 3
+    Restart:
+      type: object
+      properties:
+        sticks:
+          type: number
+          format: int64
+          minimum: 1
+          example: 30
+    Response:
+      type: object
+      properties:
+        sticksLeft:
+          type: integer
+          format: int32
+          example: 14
+        message:
+          type: string
+          example: "Your turn!"
+    ErrorResponse:
+      type: object
+      properties:
+        errorTitle:
+          type: string
+          example: Parse error
+        errors:
+          type: array
+          items: {}
+          example: [{ "field":"error"}]
