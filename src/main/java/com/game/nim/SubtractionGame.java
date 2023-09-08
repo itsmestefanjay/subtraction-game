@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NimGameApplication {
+public class SubtractionGame {
 
     public static void main(String[] args) {
-        SpringApplication.run(NimGameApplication.class, args);
+        SpringApplication.run(SubtractionGame.class, args);
     }
 
 }

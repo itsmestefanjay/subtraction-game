@@ -13,7 +13,7 @@ import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class GameIntegrationTest {
+public class SubtractionGameIntegrationTest {
 
     @LocalServerPort
     private int port;
