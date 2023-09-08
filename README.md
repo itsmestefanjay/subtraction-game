@@ -4,7 +4,7 @@ This game is a variant of the Nim game. Each player is allowed to draw up to 3 s
 The player who draws the last stick loses. This repostory also tries to implement a _clean architecture_ approach.
 
 ### Prerequisites
-- JDK 17+
+- JDK 17
 - Internet connection to download dependencies
 
 ### Rules
@@ -64,3 +64,8 @@ The player who draws the last stick loses. This repostory also tries to implemen
 - The _expert mode_ is just a simple implementation of Bouton's strategy where the winning strategy is to calculate the number `(stake - 1) % (maxDraw + 1)`
   - if the number is **not** 0, we remove the number from the stake
   - if the number is 0, we remove a random number between 1-3 (to make it more random again)
+
+### Troubleshooting
+You need to run Gradle with JDK 17 as well, either by setting it as JAVA_HOME or by changing your IntelliJ settings:
+
+![](assets/jdk_17.png)
