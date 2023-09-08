@@ -1,7 +1,7 @@
 ## Subtraction Game
 
 This game is a variant of the Nim game. Each player is allowed to draw up to 3 sticks from a single stack of sticks. 
-The player who draws the last stick loses.
+The player who draws the last stick loses. This repostory also tries to implement a _clean architecture_ approach.
 
 ### Prerequisites
 - JDK 17+
