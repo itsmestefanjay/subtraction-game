@@ -18,8 +18,8 @@ The player who draws the last stick loses
   - run `java -jar build/libs/nim-game-1.0.0.jar` or
   - use `./gradlew bootRun` or
   - use via the IDEA in the class `NimGameApplication.class`
-- Open a REST client and set the host to `localhost:8080/game/v1`
-- To make a move send a PUT to the endpoint `/take` with the JSON payload to draw 2 sticks:
+- Open a REST client and set the host to `localhost:8089/nim-game/api/v1`
+- To make a move send a PUT to the endpoint `/draw` with the JSON payload to draw 2 sticks:
 ```json
 {
   "sticks": 2
@@ -48,6 +48,9 @@ The player who draws the last stick loses
 
 ## Parameters
 - you can configure the game two ways:
-  - enabling `expertMode` by setting `expert.mode=true` in the application.properties or `-Dexpert.mode=true`
+  - enabling expert mode by setting `expert.mode=true` in the application.properties or `-Dexpert.mode=true`
   - setting the initial amount of sticks by setting `stick.amount=<random number>` in the application.properties or `-Dstick.amount=<random number>`
   - example: `java -Dexpert.mode=true -Dstick.amount=100 -jar build/libs/nim-game-1.0.0.jar`
+
+## Expert mode
+The so called expert mode is just a simple implementation where the win strategy by removing `stake % (maxDraw + 1)` if the rest is 1
