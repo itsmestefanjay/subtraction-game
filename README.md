@@ -61,5 +61,6 @@ The player who draws the last stick loses.
 
 ### About game modes
 - The _standard mode_ implements a random amount of sticks to be drawn by the computer
-- The _expert mode_ is just a simple implementation of Bouton's strategy where the winning strategy is to remove
-sticks = `stake % (maxDraw + 1)` or sticks = `maxDraw` if the result would be 0.
+- The _expert mode_ is just a simple implementation of Bouton's strategy where the winning strategy is to calculate the number `(stake - 1) % (maxDraw + 1)`
+  - if the number is **not** 0, we remove the number from the stake
+  - if the number is 0, we remove a random number between 1-3 (to make it more random again)
