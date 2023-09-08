@@ -1,7 +1,7 @@
-## Nim Game
+## Subtraction Game
 
-This game is a variant of the Nim game. It has one row with 13 sticks. Each player can take 1 to 3 sticks. 
-The player who draws the last stick loses
+This game is a variant of the Nim game. Each player is allowed to draw up to 3 sticks from a single stack of sticks. 
+The player who draws the last stick loses.
 
 ### Prerequisites
 - JDK 17+
@@ -11,7 +11,7 @@ The player who draws the last stick loses
 - You start first
 - You are allowed to draw between 1 and 3 sticks
 - Then the computer does its move
-- If you draw the last stick you lose otherwise you win
+- If you draw the last stick you lose, otherwise you win
 
 ### How to play
 - start the application by either
@@ -28,14 +28,14 @@ The player who draws the last stick loses
 - the response tells you what the computer did and how many sticks are left:
 ```json
 {
-  "sticks": 13,
+  "sticksLeft": 13,
   "message": "Computer took 2 sticks. Your turn..."
 }
 ```
 - The game is over when no sticks are left:
 ```json
 {
-  "sticks": 0,
+  "sticksLeft": 0,
   "message": "Computer took the last stick. You win!"
 }
 ```
@@ -49,8 +49,12 @@ The player who draws the last stick loses
 ## Parameters
 - you can configure the game two ways:
   - enabling expert mode by setting `expert.mode=true` in the application.properties or `-Dexpert.mode=true`
-  - setting the initial amount of sticks by setting `stick.amount=<random number>` in the application.properties or `-Dstick.amount=<random number>`
+  - setting the initial amount of sticks by setting `stick.amount=<random number>` in the application.properties 
+  or `-Dstick.amount=<random number>`
   - example: `java -Dexpert.mode=true -Dstick.amount=100 -jar build/libs/nim-game-1.0.0.jar`
+  - Make sure to add them BEFORE the -jar option
 
-## Expert mode
-The so called expert mode is just a simple implementation where the win strategy by removing `stake % (maxDraw + 1)` if the rest is 1
+## modes
+- The _standard mode_ mplements a random amount of sticks to be drawn by the computer
+- The _expert mode_ is just a simple implementation of Bouton's strategy where the winning strategy is to remove
+sticks = `stake % (maxDraw + 1)` or sticks = `maxDraw` if the result would be 0.
